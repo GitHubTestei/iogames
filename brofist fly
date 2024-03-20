@@ -1,0 +1,20 @@
+// javascript code to fly in brofist, currently works 2024
+// код javascript для полета в брофисте, в настоящее время работает 2024 г.
+// Press up arrow to use, down arrow to fall down faster
+// Нажмите стрелку вверх, чтобы использовать, стрелку вниз, чтобы падать быстрее
+// Copy and paste in console (inspect)
+// Скопируйте и вставьте в консоль (inspect)
+
+ onkeydown = e => (e.keyCode == 38 && tweenObjects.map(x => x.p.body.world.gravity[1] = 9.7),
+
+e.keyCode == 39 && tweenObjects.map(x => (
+
+    x.ntAlpha = x.ntAlpha || x.refP.getAlpha(),
+
+    x.refP.setAlpha(.2)
+
+)), 1);
+
+onkeyup = e => (e.keyCode == 38 && tweenObjects.map(x => x.p.body.world.gravity[1] = -9.7),
+
+e.keyCode == 39 && tweenObjects.map(x => x.refP.setAlpha(x.ntAlpha)), 1);
